@@ -1,0 +1,194 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+.nav-link {
+  text-decoration: none;
+  transition: 0.4s;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover {
+  border-bottom: 2px solid #A6A6A6;
+}
+
+/* Animación del menú móvil */
+.mobile-menu-transition {
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  display: block; /* Forzamos a que esté visible para aplicar height */
+}
+
+.mobile-menu-open {
+  max-height: 500px; /* Ajusta según contenido */
+  opacity: 1;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (max-width: 767px) {
+    #carousel .group {
+      aspect-ratio: 3 / 2; /* Mantiene relación visual armónica */
+      position: relative;
+    }
+
+    #carousel .group img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    #carousel .group > div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+svg {
+  backface-visibility: hidden;
+  transform: translateZ(0); /* fuerza compositing layer */
+}
+
+body.modal-open {
+  overflow: hidden;
+  padding-right: var(--scrollbar-compensation, 0px);
+}
+.no-scroll {
+  overflow: hidden;
+  padding-right: 35px; /* Compensa la desaparición del scroll */
+}
+
+.burger-svg .line {
+    transition: all 0.3s ease-in-out;
+  }
+
+.burger-svg.open .top {
+  transform: rotate(45deg);
+  transform-origin: 50% 50%;
+  d: path("M 30,30 L 70,70");
+}
+
+.burger-svg.open .bottom {
+  transform: rotate(-45deg);
+  transform-origin: 50% 50%;
+  d: path("M 30,70 L 70,30");
+}
+
+ #price {
+            /* Permite que el elemento tenga un ancho fijo sin romper el flujo del texto */
+            display: inline-block;
+            
+            /* Establece un ancho mínimo basado en el texto más largo ("S/.250" -> 5 caracteres) */
+            min-width: 5ch;
+
+            /* Centra el texto para que "$69" no se vea desalineado */
+            text-align: center;
+        }
+
+.nav-link, svg {
+  transition: color 0.3s ease;
+}
+#loader-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.loader-background {
+  background-color: rgb(0, 0, 0); /* o usa #1a1a1a si es dark mode */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.dots-loader {
+  display: flex;
+  gap: 8px;
+}
+
+.dots-loader span {
+  width: 12px;
+  height: 12px;
+  background-color: #6366f1; /* Color azul-violeta */
+  border-radius: 50%;
+  animation: bounce 0.6s infinite ease-in-out;
+}
+
+.dots-loader span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.dots-loader span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-10px);
+    opacity: 0.6;
+  }
+}
+
+.loader-hidden .loader-background {
+  opacity: 0;
+}
+
+.card {
+  background-color: #080808;
+  z-index: 10;
+  position: relative;
+}
+
+@keyframes carousel {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-carousel {
+  animation: carousel 20s linear infinite;
+}
+
+.faq-content {
+      transition: max-height 0.1s ease-in-out, opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+      transform-origin: top;
+    }
+
+
+ @layer utilities {
+    @keyframes glowPulse {
+      0%, 100% {
+        box-shadow: 0 0 25px 5px rgba(79, 57, 246, 0.2);
+      }
+      50% {
+        box-shadow: 0 0 40px 10px rgba(79, 57, 246, 0.35);
+      }
+    }
+    .hover\\:animate-glow:hover {
+      animation: glowPulse 2s ease-in-out infinite;
+    }
+  }
