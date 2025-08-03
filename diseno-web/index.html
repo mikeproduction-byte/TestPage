@@ -15,7 +15,7 @@
     <meta name="author" content="Webstom">
    
     <link rel="icon" href="https://placehold.co/32x32"/>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preload" href="/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="assets/css/base/fonts.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -714,7 +714,7 @@
    <!---->
 
   <script src="assets/js/price.js" async></script>
-  <script src="assets/js/efectos/faq.js"></script>
+  <script src="assets/js/efectos/faq.js" defer></script>
   <script src="assets/js/ui/burger_animation.js" async></script>
   <script src="assets/js/modal.js" async></script>
   <script src="assets/js/funtions.js" async></script> 
