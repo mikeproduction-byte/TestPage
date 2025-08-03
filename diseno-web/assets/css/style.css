@@ -31,30 +31,6 @@
   scrollbar-width: none;
 }
 
-@media (max-width: 767px) {
-    #carousel .group {
-      aspect-ratio: 3 / 2;
-      position: relative;
-    }
-
-    #carousel .group img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    #carousel .group > div {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-  }
-
 svg {
   backface-visibility: hidden;
   transform: translateZ(0); 
@@ -99,44 +75,7 @@ body.modal-open {
 .nav-link, svg {
   transition: color 0.3s ease;
 }
-#loader-transition {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  pointer-events: none;
-}
 
-.loader-background {
-  background-color: rgb(0, 0, 0); 
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 1;
-  transition: opacity 0.4s ease;
-}
-
-.dots-loader {
-  display: flex;
-  gap: 8px;
-}
-
-.dots-loader span {
-  width: 12px;
-  height: 12px;
-  background-color: #6366f1; 
-  border-radius: 50%;
-  animation: bounce 0.6s infinite ease-in-out;
-}
-
-.dots-loader span:nth-child(2) {
-  animation-delay: 0.1s;
-}
-
-.dots-loader span:nth-child(3) {
-  animation-delay: 0.2s;
-}
 
 @keyframes bounce {
   0%, 100% {
@@ -149,28 +88,12 @@ body.modal-open {
   }
 }
 
-.loader-hidden .loader-background {
-  opacity: 0;
-}
-
 .card {
   background-color: #080808;
   z-index: 10;
   position: relative;
 }
 
-@keyframes carousel {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-carousel {
-  animation: carousel 20s linear infinite;
-}
 
 .faq-content {
       transition: max-height 0.1s ease-in-out, opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
@@ -191,3 +114,74 @@ body.modal-open {
       animation: glowPulse 2s ease-in-out infinite;
     }
   }
+
+/* carga */
+
+ /* Fondo del loader */
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #0b1422;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.6s ease;
+    }
+
+    /* Animación */
+    @keyframes honeycomb {
+      0%, 20%, 80%, 100% {
+        opacity: 0;
+        transform: scale(0);
+      }
+      30%, 70% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .honeycomb {
+      position: relative;
+      width: 150px;
+      height: 130px;
+    }
+
+    .honeycomb div {
+      animation: honeycomb 2.1s infinite backwards;
+      background: #4F39F6;
+      height: 40px;
+      width: 70px;
+      position: absolute;
+    }
+
+    .honeycomb div::after,
+    .honeycomb div::before {
+      content: '';
+      border-left: 35px solid transparent;
+      border-right: 35px solid transparent;
+      position: absolute;
+      left: 0;
+      right: 0;
+    }
+
+    .honeycomb div::after {
+      top: -20px;
+      border-bottom: 20px solid #4F39F6;
+    }
+
+    .honeycomb div::before {
+      bottom: -20px;
+      border-top: 20px solid #4F39F6;
+    }
+
+    .honeycomb div:nth-child(1) { animation-delay: 0s;     left: -80px; top: 45px; }
+    .honeycomb div:nth-child(2) { animation-delay: 0.1s;   left: -40px; top: 90px; }
+    .honeycomb div:nth-child(3) { animation-delay: 0.2s;   left: 40px; top: 90px; }
+    .honeycomb div:nth-child(4) { animation-delay: 0.3s;   left: 80px; top: 45px; }
+    .honeycomb div:nth-child(5) { animation-delay: 0.4s;   left: 40px; top: 0px; }
+    .honeycomb div:nth-child(6) { animation-delay: 0.5s;   left: -40px; top: 0px; }
+    .honeycomb div:nth-child(7) { animation-delay: 0.6s;   left: 0px; top: 45px; }
