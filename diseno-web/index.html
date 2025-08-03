@@ -732,12 +732,10 @@
 
   <script src="assets/js/price.js" async></script>
   <script src="assets/js/efectos/faq.js"></script>
-  <script src="assets/js/efectos/maquina_escribir.js" async></script>
   <script src="assets/js/ui/burger_animation.js" async></script>
   <script src="assets/js/modal.js" async></script>
   <script src="assets/js/ui/modal_trans.js"></script>
   <script src="assets/js/funtions.js" async></script> 
-  <script src="assets/js/ui/transition.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init();</script>
   
@@ -749,28 +747,6 @@
     }
   }
 </script>
-
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    window.addEventListener("load", function () {
-      const loader = document.getElementById('loader');
-      if (loader) {
-        loader.style.opacity = '0';
-        loader.style.pointerEvents = 'none';
-        loader.style.transition = 'opacity 0.6s ease';
-
-        // Espera a que termine la transición y luego lo oculta
-        setTimeout(() => {
-          loader.style.display = 'none';
-        }, 700);
-      }
-    });
-  });
-</script>
-
-
-
   </body>
   
 </html>
