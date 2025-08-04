@@ -1,15 +1,4 @@
 
-.nav-link {
-  text-decoration: none;
-  transition: 0.4s;
-  border-bottom: 2px solid transparent;
-}
-
-.nav-link:hover {
-  border-bottom: 2px solid #A6A6A6;
-}
-
-
 .mobile-menu-transition {
   transition: max-height 0.4s ease, opacity 0.4s ease;
   overflow: hidden;

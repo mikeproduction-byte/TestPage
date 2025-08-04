@@ -24,7 +24,7 @@ const toggles = document.querySelectorAll('.faq-toggle');
           
           setTimeout(() => {
             content.style.maxHeight = 'none';
-          }, 200); 
+          }, 100); 
         }
       });
     });
